@@ -1,0 +1,22 @@
+.content {
+  grid-area: main;
+
+  grid-template-areas:
+    "fil fil fil"
+    "pag pag pag"
+    "con con con";
+
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.cardContent {
+  grid-area: con;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "dt dt dt";
+  grid-gap: 24px;
+  justify-content: center;
+}
+
+

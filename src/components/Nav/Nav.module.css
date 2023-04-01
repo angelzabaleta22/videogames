@@ -1,0 +1,124 @@
+.header {
+    grid-area: hd;
+
+    justify-content: space-between;
+    background-color: rgba(182, 182, 182, 0.466);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header div {
+    height: 56px;
+}
+
+.header h1 {
+    color: white;
+    margin: 0;
+    text-shadow: 5px 5px 2px rgb(19, 19, 19);
+}
+.content {
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.content img {
+    width: 55px;
+    transform: rotate(45deg);
+    padding-right: 30px;
+
+}
+
+.title {
+    display: flex;
+}
+
+
+
+.button {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 5px;
+    
+}
+
+.button:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button:active {
+    color: rgb(51, 253, 1);
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.432);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+/* En este caso en particular,
+la animación se está aplicando a la propiedad background-position,
+que controla la posición del fondo de un elemento. El valor 0 0 significa que el fondo se posiciona en la esquina superior izquierda del elemento. El valor 400% 0 significa que el fondo se desplaza 400% a la derecha respecto a su posición original. Por lo tanto,
+esta animación hará que el fondo del elemento se desplace hacia la derecha y vuelva a la posición original de manera cíclica. */

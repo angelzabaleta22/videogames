@@ -1,0 +1,26 @@
+.pagination {
+  grid-area: pag;
+}
+
+.currentPage {
+  background-color: #3b3b3b;
+  color: white;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.pagination ul > li {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  color: #fff;
+}
+
+.pagination ul > li:hover:not(.active) {
+  background-color: #ddd;
+  color: #3b3b3b;
+}

@@ -1,0 +1,195 @@
+.gameDetail {
+  text-align: center;
+  display: grid;
+  grid-area: dt;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.2fr auto;
+  grid-template-areas:
+    "top   top"
+    "left     rigth";
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 20px;
+}
+
+.description h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.description span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.title h1 {
+  font-size: 72px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detail span {
+  color: #fff;
+}
+
+.rigth {
+  grid-area: rigth;
+  padding-top: 40px;
+}
+.rigth img {
+  height: 200px;
+  border-radius: 20px;
+}
+
+.left {
+  grid-area: left;
+}
+.top {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  grid-area: top;
+}
+
+.delete {
+  text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #f80404;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.back {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #000000;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 5px;
+
+}
+.back:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.back:active {
+  color: rgb(51, 253, 1);
+}
+
+.back:active:after {
+  background: transparent;
+}
+
+.back:hover:before {
+  opacity: 1;
+}
+
+.back:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.432);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.delete:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.delete:active {
+  color: rgb(51, 253, 1);
+}
+
