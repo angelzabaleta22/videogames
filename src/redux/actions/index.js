@@ -65,9 +65,7 @@ export const orderByName = (order) => {
 export const searchGame = (search) => {
   return async function (dispatch) {
     try {
-      const result = await axios.get(
-        `http://localhost:3001/videogames?name=${search}`
-      );
+      const result = await axios.get(`/videogames?name=${search}`);
 
       return dispatch({
         type: SEARCH_GAME,
@@ -88,9 +86,7 @@ export const orderByRating = (rating) => {
 
 export const getVideogame = (videoGameId) => {
   return async function (dispatch) {
-    const result = await axios.get(
-      `http://localhost:3001/videogame/${videoGameId}`
-    );
+    const result = await axios.get(`/videogame/${videoGameId}`);
 
     if (result.data.success) {
       return dispatch({
@@ -109,7 +105,7 @@ export const getVideogame = (videoGameId) => {
 export const getAllGenres = () => {
   return async function (dispatch) {
     try {
-      const result = await axios.get("http://localhost:3001/genres");
+      const result = await axios.get("/genres");
       return dispatch({
         type: GET_ALL_GENRES,
         payload: result.data,
@@ -123,7 +119,7 @@ export const getAllGenres = () => {
 export const getAllPlatforms = () => {
   return async function (dispatch) {
     try {
-      const result = await axios.get("http://localhost:3001/platforms");
+      const result = await axios.get("/platforms");
       return dispatch({
         type: GET_ALL_PLATFORMS,
         payload: result.data,
@@ -134,10 +130,7 @@ export const getAllPlatforms = () => {
 
 export const createVideoGame = (videogame) => {
   return async function () {
-    const result = await axios.post(
-      "http://localhost:3001/videogame",
-      videogame
-    );
+    const result = await axios.post("/videogame", videogame);
     return result;
   };
 };
@@ -150,9 +143,7 @@ export const resetVideogame = () => {
 
 export const deleteVideoGame = (videoGameId) => {
   return async function () {
-    const result = await axios.delete(
-      `http://localhost:3001/videogame/${videoGameId}`
-    );
+    const result = await axios.delete(`/videogame/${videoGameId}`);
     return result;
   };
 };

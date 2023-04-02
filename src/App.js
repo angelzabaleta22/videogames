@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Landing from "./components/Landing/Landing";
@@ -15,6 +16,7 @@ import {
 import GameDetail from "./components/GameDetail/GameDetail";
 import CreateVideoGame from "./components/CreateVideoGame/CreateVideoGame";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   const dispatch = useDispatch();
