@@ -16,7 +16,7 @@ export const RESET_VIDEOGAME = "RESET_VIDEOGAME";
 export const getAllVideogames = () => {
   return async function (dispatch) {
     try {
-      const result = await axios.get("http://localhost:3001/videogames");
+      const result = await axios.get("/videogames");
       return dispatch({
         type: GET_ALL_VIDEOGAMES,
         payload: result.data,

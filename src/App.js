@@ -16,7 +16,7 @@ import {
 import GameDetail from "./components/GameDetail/GameDetail";
 import CreateVideoGame from "./components/CreateVideoGame/CreateVideoGame";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://videogamesbackend-production.up.railway.app";
 
 function App() {
   const dispatch = useDispatch();
